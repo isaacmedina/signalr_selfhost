@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Owin;
 
-[assembly: OwinStartup(typeof(SignalRSelfHost.Startup))]
 namespace SignalRSelfHost
 {
     class Program
@@ -29,31 +28,6 @@ namespace SignalRSelfHost
                 Console.WriteLine("Server running on {0}", url);
                 Console.ReadLine();
             }
-        }
-    }
-
-    class Startup
-    {
-        public void Configuration(IAppBuilder app)
-        {
-            // Enable cors support
-            app.UseCors(CorsOptions.AllowAll);
-
-            // Create signalr resource
-            app.MapSignalR();
-        }
-    }
-
-    public class VesselHub: Hub
-    {
-        public void Send(string name, string message)
-        {
-            Clients.All.addMessage(name, message);
-        }
-
-        public void Join(string groupName)
-        {
-            Groups.Add(Context.ConnectionId, groupName);
         }
     }
 }
