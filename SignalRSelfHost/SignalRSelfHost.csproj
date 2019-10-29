@@ -74,7 +74,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Notification.cs" />
+    <Compile Include="Notification\Notification.cs" />
+    <Compile Include="Notification\NotificationData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -82,7 +83,37 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Notification\Data\FDGT_1.JSON">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Notification\Data\FDGT_2.JSON" />
+    <None Include="Notification\Data\FDGT_3.JSON" />
+    <None Include="Notification\Data\FDGT_4.JSON" />
+    <None Include="Notification\Data\FDGT_5.JSON" />
+    <None Include="Notification\Data\FDGT_6.JSON" />
+    <None Include="Notification\Data\FDMF_1.JSON" />
+    <None Include="Notification\Data\FDMF_2.JSON" />
+    <None Include="Notification\Data\FDMF_3.JSON" />
+    <None Include="Notification\Data\FDMF_4.JSON" />
+    <None Include="Notification\Data\FDMF_5.JSON" />
+    <None Include="Notification\Data\FDMF_6.JSON" />
+    <None Include="Notification\Data\FDPM_1.JSON" />
+    <None Include="Notification\Data\FDPM_2.JSON" />
+    <None Include="Notification\Data\FDPM_3.JSON" />
+    <None Include="Notification\Data\FDPM_4.JSON" />
+    <None Include="Notification\Data\FDPM_5.JSON" />
+    <None Include="Notification\Data\FDPM_6.JSON" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="index.html" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

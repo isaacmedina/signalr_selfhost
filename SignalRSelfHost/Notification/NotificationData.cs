@@ -9,8 +9,8 @@ namespace SignalRSelfHost
 {
     public class NotificationData
     {
-        private List<NotificationItem> _Data;
-        private List<string> groups = new List<string>()
+        public List<NotificationItem> Data;
+        public List<string> groups = new List<string>()
         {
             "FDMF",
             "FDPM",
@@ -18,29 +18,30 @@ namespace SignalRSelfHost
             "FDCO",
             "FDAC"
         };
-        private int _Count;
 
         public int Count { get; set; }
         public NotificationData()
         {
+            Data = new List<NotificationItem>();
             LoadInitialData();
         }
 
         public NotificationItem GetNotificationItem(int key)
         {
-            return _Data.FirstOrDefault(x => x.key == key);
+            return Data.FirstOrDefault(x => x.key == key);
         }
 
         private void LoadInitialData()
         {
             int key = 1;
-            DirectoryInfo directory = new DirectoryInfo($"{AppDomain.CurrentDomain.BaseDirectory}");
+            string path = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Notification\Data"));
+            DirectoryInfo directory = new DirectoryInfo(path);
             foreach (string group in groups)
             {
                 FileInfo[] Files = directory.GetFiles($"{group}*.json");
                 foreach (FileInfo file in Files)
                 {
-                    _Data.Add(new NotificationItem()
+                    Data.Add(new NotificationItem()
                     {
                         key = key,
                         group = group,
@@ -49,7 +50,15 @@ namespace SignalRSelfHost
                     key++;
                 }
             }
+            Count = key;
         }
+    }
+
+    public interface INotificationData
+    {
+        List<NotificationItem> Data { get; set; }
+        int Count { get; set; }
+        NotificationItem GetNotificationItem(int key);
     }
 
     public class NotificationItem

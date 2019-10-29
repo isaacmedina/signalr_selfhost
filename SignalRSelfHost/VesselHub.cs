@@ -13,5 +13,10 @@ namespace SignalRSelfHost
         {
             Groups.Add(Context.ConnectionId, groupName);
         }
+
+        public void RemoveGroup(string groupName)
+        {
+            Groups.Remove(Context.ConnectionId, groupName);
+        }
     }
 }
