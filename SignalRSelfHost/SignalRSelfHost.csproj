@@ -130,6 +130,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="NotificationLifeCycle.JPG" />
+    <Content Include="resources\claroGrid.css" />
+    <Content Include="resources\Expando.html" />
+    <Content Include="resources\Grid.css" />
+    <Content Include="resources\Grid_rtl.css" />
+    <Content Include="resources\images\grid_dx_gradient.gif" />
+    <Content Include="resources\images\grid_sort_down.gif" />
+    <Content Include="resources\images\grid_sort_up.gif" />
+    <Content Include="resources\images\header.png" />
+    <Content Include="resources\images\header_shadow.png" />
+    <Content Include="resources\images\row_back.png" />
+    <Content Include="resources\images\tabEnabled_rotated.png" />
+    <Content Include="resources\images\tabHover_rotated.png" />
+    <Content Include="resources\images\td_button_down.png" />
+    <Content Include="resources\nihiloGrid.css" />
+    <Content Include="resources\soriaGrid.css" />
+    <Content Include="resources\tundraGrid.css" />
+    <Content Include="resources\View.html" />
+    <Content Include="resources\_Grid.html" />
     <Content Include="Scripts\grid.js" />
     <Content Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
